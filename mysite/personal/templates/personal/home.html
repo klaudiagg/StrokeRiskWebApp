@@ -2,15 +2,34 @@
 
 {% block content %}
 {% include "personal/includes/menu.html" %}
+<div style="height: 40px;">
 
+</div>
+<div class="col-6" style="margin-top: 200px; text-align: center; margin: auto; box-shadow: 10px 10px 15px gray; border-radius: 50px; border: 2px solid black; padding: 80px; height: 600px; background-color: white;">
 {% if questions %}
-    <ul>
+    <form action="{% url 'personal:results' %}" >
         {% for question in questions %}
-            <li><a><b>{{question.question_text}}</b></a></li>
+           <a><b>{{question.question_text}}</b></a><br>
+<div class="btn-group-toggle" data-toggle="buttons">
+                 {% for choice in choices %}
+
+                    {% if question.id == choice.Question_id %}
+
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="{{choice.Question_id}}" id="choice{{ forloop.counter }}" checked ><b>{{choice.choice_text}}</b>
+                        </label>
+
+					{% endif %}
+				{% endfor %}
+     </div>
+
+            <br>
         {% endfor %}
-    </ul>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 {% else %}
     <p> No questions available </p>
 {% endif %}
+</div>
 
 {% endblock %}

@@ -6,11 +6,15 @@
 	<meta charset="utf-8" />
 	{% load staticfiles %}
 	<link rel='stylesheet' href="{% static '/personal/css/bootstrap.min.css' %}" type='text/css'>
+	<script src="{% static '/personal/js/jquery.js' %}"></script>
+	<script src="{% static '/personal/js/bootstrap.min.js' %}"></script>
 </head>
-<body class="body" style="background-color:white">
-	<div>
-		{% block content %}
-		{% endblock %}
+<body class="body">
+	<div style="height: 1000px; background: linear-gradient(to bottom right, pink, lightblue);">
+		<div>
+			{% block content %}
+			{% endblock %}
+		</div>
 	</div>
 </body>
 
