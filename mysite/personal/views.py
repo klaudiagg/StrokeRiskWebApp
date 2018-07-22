@@ -10,8 +10,19 @@ def index(request):
     context = {'questions': questions, 'choices': choices}
     return render(request, 'personal/home.html', context)
 
+
+#def results(request):
+#    return render(request, 'personal/results.html')
+
+
 def results(request):
-        return render(request, 'personal/results.html')
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = request.POST
+        print(form)
+
+    return render(request, 'personal/results.html', {'form': form})
 
 
 

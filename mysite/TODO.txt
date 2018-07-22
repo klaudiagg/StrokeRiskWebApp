@@ -1,0 +1,6 @@
+- orm vs sql
+- wrzucanie danych do bazy
+- ogarn¹æ do koñca metodê post (jak wyœwietliæ wartoœci wciœniêtych buttonow)
+- przygotowaæ pytania + odpowiedzi - tabela w bazie + jakiœ skrypt obliczaj¹cy przynale¿noœæ do danej
+grupy ryzyka
+- ma byæ œlicznie, ale to przy okazji i nie na si³ê

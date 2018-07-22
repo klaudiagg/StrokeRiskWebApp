@@ -5,26 +5,29 @@
 <div style="height: 40px;">
 
 </div>
-<div class="col-6" style="margin-top: 200px; text-align: center; margin: auto; box-shadow: 10px 10px 15px gray; border-radius: 50px; border: 2px solid black; padding: 80px; height: 600px; background-color: white;">
-{% if questions %}
-    <form action="{% url 'personal:results' %}" >
+<div class="col-6" style="margin-top: 200px; text-align: center; margin: auto; box-shadow: 10px 10px 15px gray; border-radius: 50px; border: 0px solid black; padding: 80px; height: 600; background-color: white;">
+
+    {% if questions %}
+    <form action="{% url 'personal:results' %}" method="post">
+        {% csrf_token %}
         {% for question in questions %}
            <a><b>{{question.question_text}}</b></a><br>
-<div class="btn-group-toggle" data-toggle="buttons">
+    <div class="btn-group-toggle" data-toggle="buttons">
                  {% for choice in choices %}
 
                     {% if question.id == choice.Question_id %}
 
                     <label class="btn btn-secondary">
                         <input type="radio" name="{{choice.Question_id}}" id="choice{{ forloop.counter }}" checked ><b>{{choice.choice_text}}</b>
-                        </label>
+                    </label>
 
 					{% endif %}
 				{% endfor %}
-     </div>
 
-            <br>
+    </div>
+    <br>
         {% endfor %}
+        <input type="text" name="test"/>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 {% else %}
