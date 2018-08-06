@@ -2,45 +2,15 @@
 
 {% block content %}
 {% include "personal/includes/menu.html" %}
-<div style="height: 40px;">
+<div class="container mt-5 pb-5">
+    <div class="col-6" style="text-align: center; margin: auto; box-shadow: 10px 10px 15px gray; border-radius: 50px; border: 0px solid black; padding: 80px; height: 600; background-color: white;">
 
-</div>
-<div class="col-6" style="margin-top: 200px; text-align: center; margin: auto; box-shadow: 10px 10px 15px gray; border-radius: 50px; border: 0px solid black; padding: 80px; height: 600; background-color: white;">
-
-    {% if questions %}
-    <form action="{% url 'personal:results' %}" method="post">
-        {% csrf_token %}
-        {% for question in questions %}
-           <a><b>{{question.question_text}}</b></a><br>
-    <div class="btn-group-toggle" data-toggle="buttons">
-                 {% for choice in choices %}
-
-                    {% if question.id == choice.Question_id %}
-
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="{{choice.Question_id}}" id="choice{{ forloop.counter }}" checked ><b>{{choice.choice_text}}</b>
-                    </label>
-
-					{% endif %}
-				{% endfor %}
-
+        <form action="/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-default" value="Submit"/>
+        </form>
     </div>
-    <br>
-        {% endfor %}
-        <input type="text" name="test"/>
-        <button type="submit" class="btn btn-default">Submit</button>
+</div>
 
-{% else %}
-    <p> No questions available </p>
-{% endif %}
-    </form>
-</div>
-<div class="col-6" style="margin-top: 200px; text-align: center; margin: auto; box-shadow: 10px 10px 15px gray; border-radius: 50px; border: 0px solid black; padding: 80px; height: 600; background-color: white;">
-    <hr>
-    <form action="/" method="post">
-    {% csrf_token %}
-    {{ form1.as_ul }}
-    <input type="submit" value="Submit" />
-    </form>
-</div>
 {% endblock %}

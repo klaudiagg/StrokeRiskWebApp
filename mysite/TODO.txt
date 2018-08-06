@@ -1,6 +1,6 @@
 - orm vs sql
 - wrzucanie danych do bazy
-- ogarn¹æ do koñca metodê post (jak wyœwietliæ wartoœci wciœniêtych buttonow)
-- przygotowaæ pytania + odpowiedzi - tabela w bazie + jakiœ skrypt obliczaj¹cy przynale¿noœæ do danej
+- ogarnï¿½ï¿½ do koï¿½ca metodï¿½ post (jak wyï¿½wietliï¿½ wartoï¿½ci wciï¿½niï¿½tych buttonow)
+- przygotowaï¿½ pytania + odpowiedzi - tabela w bazie + jakiï¿½ skrypt obliczajï¿½cy przynaleï¿½noï¿½ï¿½ do danej
 grupy ryzyka
-- ma byæ œlicznie, ale to przy okazji i nie na si³ê
+- ma byï¿½ ï¿½licznie, ale to przy okazji i nie na siï¿½ï¿½
