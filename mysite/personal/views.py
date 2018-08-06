@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.template import loader, RequestContext
 from django.http import HttpResponse
 from .models import Question, Choice
+from .forms import StrokeForm
 
 
 def index(request):
@@ -11,11 +12,11 @@ def index(request):
     return render(request, 'personal/home.html', context)
 
 
-#def results(request):
+# def results(request):
 #    return render(request, 'personal/results.html')
 
 
-def results(request):
+'''def results(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -23,6 +24,12 @@ def results(request):
         print(form)
 
     return render(request, 'personal/results.html', {'form': form})
+'''
 
+def results(request):
+    # if this is a POST request we need to process the form data
 
+        # create a form instance and populate it with data from the request:
+    form1 = StrokeForm()
 
+    return render(request, 'personal/results.html', {"form1": form1})
