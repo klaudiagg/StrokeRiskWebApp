@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import StrokeForm
 from django.shortcuts import redirect
+from django.http import JsonResponse
 
 def home(request):
     form = StrokeForm()
@@ -16,8 +17,8 @@ def results(request):
     result = calculate_result(form)
     form.save()
     context = {'result': result}
-    return render(request, 'personal/results.html', context)
-
+    # return render(request, 'personal/results.html', context)
+    return JsonResponse({'result': result })
 
 def calculate_result(form):
     from numpy import exp
