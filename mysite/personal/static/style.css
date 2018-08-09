@@ -1,0 +1,16 @@
+html, body{
+    height: 100%;
+}
+
+main{
+    background: linear-gradient(to bottom right, pink, lightgreen);
+    min-height: 100%;
+}
+ul{
+	list-style: none;
+}
+
+ul > li {
+    display: inline-block;
+    margin: 0 30px;
+}
