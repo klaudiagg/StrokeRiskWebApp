@@ -4,11 +4,11 @@
 {% include "personal/includes/menu.html" %}
 <div class="home container mt-5 pb-5">
     <div class="col-9" style="text-align: center; margin: auto; box-shadow: 10px 10px 15px gray; border-radius: 50px; border: 0px solid black; padding: 80px; height: 600; background-color: white;">
-        <h2>Wypełnij ankietę aby sprawdzić swój poziom ryzyka zachorowania na udaru mózgu!</h2>
+        <h2>Wypełnij ankietę aby policzyć prawdopodobieństwo zachorowania na udaru mózgu!</h2>
         <form action="results/" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" class="przycisk btn btn-default" value="Submit">
+            <input type="submit" class="przycisk btn btn-default" value="Sprawdź wynik">
         </form>
     </div>
 </div>
@@ -21,7 +21,7 @@
         <p>
         <p> To o x więcej niż średni wynik w Twoim przedziale wiekowym.</p>
         <p>Podany wynik nie jest diagnozą, a jedynie wskazówką. Po rzeczywistą diagnozę warto udać się do lekarza.</p>
-        <button class="backButton btn btn-primary">Wróć</button>
+        <button class="backButton btn btn-default">Wróć</button>
     </div>
 </div>
 
@@ -33,9 +33,9 @@
             $('.home').show();
         });
 
-        $('.przycisk').click(function () {
+        $('form').submit(function () {
             event.preventDefault();
-            let form = $(this).closest('form').serialize();;
+            let form = $(this).serialize();;
 
                 $.ajax({
                     type: 'POST',
